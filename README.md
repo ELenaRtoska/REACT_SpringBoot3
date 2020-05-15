@@ -31,6 +31,7 @@ Front-end апликацијата е стартувана на http://localhost
 претходно направете промени во @RestController-ите со овозможување на CORS повици од следниот домен: http://localhost:3000.
 Креирајте нов ReactJS проект со командата npx create-react-app lab3
 Во package.json додадете ги следните зависности за да може да користете bootstrap, аxios (http клиент), react-router и react-router-dom (за рутирање во апликацијата) и слично:
+```
 "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.4.1",
@@ -45,14 +46,16 @@ Front-end апликацијата е стартувана на http://localhost
     "moment": "^2.24.0",
     "react-moment": "^0.9.6"
   }
+  ```
 Навигирајте до проектот и извршете ја командата npm install за да ги инсталирате горенаведените библиотеки.
 
 Импортирајте ги библиотеките во index.js за да може да ги користете:
-
+```
    import 'bootstrap/dist/css/bootstrap.min.css';
    import 'font-awesome/css/font-awesome.css';
    import 'jquery/dist/jquery';
    import 'bootstrap/dist/js/bootstrap.min';
+  ```
 Слично како кај аудиториските вежби, креирајте header кој има три табови:
 - Home (при клик не носи на иницијалната патека : /) - Pizzas (при клик не носи на патека : /pizzas) - Ingredients (при клик не носи на патека /ingredients) За овие функционалности треба да искористите рутирање (react-router-dom). Доколку некој проба да пристапи некоја непостоечка патека, се пренасочува на почетна страна (Redirect).
 
