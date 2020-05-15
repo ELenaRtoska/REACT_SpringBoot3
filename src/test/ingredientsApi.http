@@ -1,0 +1,70 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+### get all (+)
+
+GET http://localhost:8080/api/ingredients
+
+### get by id (+)
+
+GET http://localhost:8080/api/ingredients/af2812d2-f675-4425-8ee0-b78751cc652f
+
+### test pages (+)
+
+GET http://localhost:8080/api/ingredients?page=0&size=10
+
+### test pages (-)
+
+GET http://localhost:8080/api/ingredients?page=3&size=15
+
+### test spicy (+)
+
+GET http://localhost:8080/api/ingredients?spicy=true
+
+### create ingredient (+)
+
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=test&spicy=false&amount=4&veggie=false
+
+### create ingredient (-) -> same name exception
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=cajna&spicy=true&amount=4&veggie=false
+
+### create ingredient (-) -> no more spicy ingrediens
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=test&spicy=true&amount=4&veggie=false
+
+### patch ingredient (+)
+
+PATCH http://localhost:8080/api/ingredients/a47f58c8-b5d5-4d88-97a4-01c1550c4837
+Content-Type: application/x-www-form-urlencoded
+
+veggie=false&name=patchdomat
+
+### patch ingredient (-) -> same name exception
+PATCH http://localhost:8080/api/ingredients/a47f58c8-b5d5-4d88-97a4-01c1550c4837
+Content-Type: application/x-www-form-urlencoded
+
+name=kaskaval
+
+### delete ingredient (+)
+DELETE http://localhost:8080/api/ingredients/0c4793da-29d7-4067-8249-3b30569757ac
+
+### delete ingredient (-)
+DELETE http://localhost:8080/api/ingredients/0c4793da-29d7-4067-8249-3b30569757ac
+
+### get pizzas witn ingredient (+)
+GET http://localhost:8080/api/ingredients/dd721585-2f12-432e-9f08-2bcf5653c9c8/pizzas
+
+###
